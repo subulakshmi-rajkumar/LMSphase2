@@ -1,18 +1,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>LMSPhase2Team2</groupId>
-  <artifactId>LMSPhase2Team2</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <properties>
-		<maven.compiler.source>20</maven.compiler.source>
-		<maven.compiler.target>20</maven.compiler.target>
-
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>LMSPhase2Team2</groupId>
+	<artifactId>LMSPhase2Team2</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
 		<aspectj.version>1.8.10</aspectj.version>
 	</properties>
-
 	<dependencies>
 		<!--
 		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
@@ -21,7 +19,6 @@
 			<artifactId>selenium-java</artifactId>
 			<version>4.10.0</version>
 		</dependency>
-
 		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
 		<dependency>
 			<groupId>org.testng</groupId>
@@ -29,14 +26,12 @@
 			<version>7.8.0</version>
 			<scope>test</scope>
 		</dependency>
-
 		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
 		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-java</artifactId>
 			<version>7.13.0</version>
 		</dependency>
-
 		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-junit -->
 		<dependency>
 			<groupId>io.cucumber</groupId>
@@ -44,7 +39,6 @@
 			<version>7.13.0</version>
 			<scope>test</scope>
 		</dependency>
-
 		<!-- https://mvnrepository.com/artifact/junit/junit -->
 		<dependency>
 			<groupId>junit</groupId>
@@ -52,29 +46,24 @@
 			<version>4.13.2</version>
 			<scope>test</scope>
 		</dependency>
-
-
 		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-testng -->
 		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-testng</artifactId>
 			<version>7.13.0</version>
 		</dependency>
-
 		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi</artifactId>
 			<version>5.2.3</version>
 		</dependency>
-
 		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi-ooxml</artifactId>
 			<version>5.2.3</version>
 		</dependency>
-
 		<!--
 		https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
 		<dependency>
@@ -83,12 +72,11 @@
 			<version>5.4.1</version>
 		</dependency>
 		<dependency>
-      <groupId>org.apache.maven.plugins</groupId>
-      <artifactId>maven-failsafe-plugin</artifactId>
-      <version>3.1.2</version>
-      <type>maven-plugin</type>
-    </dependency>
-
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-failsafe-plugin</artifactId>
+			<version>3.1.2</version>
+			<type>maven-plugin</type>
+		</dependency>
 		<!--
 		https://mvnrepository.com/artifact/tech.grasshopper/extentreports-cucumber7-adapter -->
 		<dependency>
@@ -96,7 +84,6 @@
 			<artifactId>extentreports-cucumber7-adapter</artifactId>
 			<version>1.13.0</version>
 		</dependency>
-
 		<!--
 		https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
 		<dependency>
@@ -104,7 +91,6 @@
 			<artifactId>log4j-core</artifactId>
 			<version>2.20.0</version>
 		</dependency>
-
 		<!--
 		https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api -->
 		<dependency>
@@ -112,7 +98,6 @@
 			<artifactId>log4j-api</artifactId>
 			<version>2.20.0</version>
 		</dependency>
-
 		<!--
 		https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-slf4j2-impl -->
 		<dependency>
@@ -121,33 +106,37 @@
 			<version>2.20.0</version>
 			<scope>test</scope>
 		</dependency>
-
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<version>1.18.24</version>
 			<optional>true</optional>
 		</dependency>
-
 		<dependency>
 			<groupId>io.qameta.allure</groupId>
 			<artifactId>allure-testng</artifactId>
 			<version>2.23.0</version>
 			<scope>test</scope>
 		</dependency>
-
-<!--Hello-->
-
-<!--		<dependency>-->
-<!--			<groupId>io.qameta.allure</groupId>-->
-<!--			<artifactId>allure-cucumber4-jvm</artifactId>-->
-<!--			<version>2.23.0</version>-->
-<!--		</dependency>-->
-
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.6</version> <!-- or the latest version -->
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/net.sf.jazzy/jazzy -->
+		<dependency>
+			<groupId>net.sf.jazzy</groupId>
+			<artifactId>jazzy</artifactId>
+			<version>0.5.2-rtext-1.4.1-2</version>
+		</dependency>
+		<!--		<dependency>-->
+		<!--			<groupId>io.qameta.allure</groupId>-->
+		<!--			<artifactId>allure-cucumber4-jvm</artifactId>-->
+		<!--			<version>2.23.0</version>-->
+		<!--		</dependency>-->
 	</dependencies>
-
-
 	<build>
+		<sourceDirectory>src/main/java</sourceDirectory>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -159,7 +148,6 @@
 					</suiteXmlFiles>
 					<argLine>
 						-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar" 
-						
 					</argLine>
 				</configuration>
 				<dependencies>
@@ -170,7 +158,6 @@
 					</dependency>
 				</dependencies>
 			</plugin>
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-shade-plugin</artifactId>
@@ -194,6 +181,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
-
 </project>

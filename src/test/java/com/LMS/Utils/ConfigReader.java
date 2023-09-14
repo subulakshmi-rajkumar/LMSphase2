@@ -7,7 +7,9 @@ import java.util.Properties;
 
 public class ConfigReader {
 
-	public static Properties prop;;
+	public static Properties prop;
+   public final static String propertyFilePath="/Users/garvit/eclipse-workspace/March_1/src/test/resources/config/config.properties";
+
 
 	/**
 	 * This method is used to load the properties from config.properties file
@@ -28,6 +30,15 @@ public class ConfigReader {
 
 		return prop;
 
+	}
+	
+	public static String getassignment() {
+		String assignmentUrl = prop.getProperty("assignmentUrl");
+		if (assignmentUrl != null)
+			return assignmentUrl;
+		else
+			throw new RuntimeException("assignmentUrl not available in the Config.properties file.");
+		
 	}
 
 }
