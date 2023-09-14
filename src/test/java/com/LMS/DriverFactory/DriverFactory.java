@@ -1,9 +1,6 @@
  package com.LMS.DriverFactory;
 
 import java.time.Duration;
-
-
-
 import org.openqa.selenium.WebDriver;
 
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -35,8 +32,8 @@ public class DriverFactory {
 			System.out.println("browser value is: " + browser);
 
 			if (browser.equals("chrome")) {
-//				ChromeOptions co= new ChromeOptions();
-//				co.addArguments("--remote-allow-origins=*");
+				ChromeOptions co= new ChromeOptions();
+				co.addArguments("--remote-allow-origins=*");
 				WebDriverManager.chromedriver().setup();
 				tlDriver.set(new ChromeDriver());
 			} else if (browser.equals("firefox")) {
@@ -52,6 +49,9 @@ public class DriverFactory {
 			}
 
 			getDriver().manage().deleteAllCookies();
+//			getDriver().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(80));
+//			getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+			
 			getDriver().manage().window().maximize();
 			return getDriver();
 
