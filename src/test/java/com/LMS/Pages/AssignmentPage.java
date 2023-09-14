@@ -456,7 +456,7 @@ public class AssignmentPage {
 		} else {
 			System.out.println("Program Drop down is not displayed on Add assignment Page.");
 		}
-		return true;
+		return Boolean.TRUE;
 	}
 
 	public Boolean calendarIconAssignment() {

@@ -1,14 +1,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>LMSPhase2Team2</groupId>
-	<artifactId>LMSPhase2Team2</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<properties>
-		<maven.compiler.source>1.8</maven.compiler.source>
-		<maven.compiler.target>1.8</maven.compiler.target>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>LMSPhase2Team2</groupId>
+  <artifactId>LMSPhase2Team2</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <properties>
+		
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>11</java.version>
+        <maven.compiler.version>3.6.1</maven.compiler.version>
 		<aspectj.version>1.8.10</aspectj.version>
+		
 	</properties>
 	<dependencies>
 		<!--
@@ -21,9 +23,10 @@
 		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
 		<dependency>
 			<groupId>org.testng</groupId>
-			<artifactId>testng</artifactId>
-			<version>7.8.0</version>
-			<scope>test</scope>
+            <artifactId>testng</artifactId>
+            <version>7.4.0</version>
+            <scope>test</scope>
+			
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
 		<dependency>
@@ -69,13 +72,14 @@
 			<groupId>io.github.bonigarcia</groupId>
 			<artifactId>webdrivermanager</artifactId>
 			<version>5.4.1</version>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.maven.plugins</groupId>
-			<artifactId>maven-failsafe-plugin</artifactId>
-			<version>3.1.2</version>
-			<type>maven-plugin</type>
-		</dependency>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-failsafe-plugin</artifactId>
+      <version>3.1.2</version>
+      <type>maven-plugin</type>
+    </dependency>
 		<!--
 		https://mvnrepository.com/artifact/tech.grasshopper/extentreports-cucumber7-adapter -->
 		<dependency>
@@ -122,31 +126,44 @@
 			<artifactId>commons-lang</artifactId>
 			<version>2.6</version> <!-- or the latest version -->
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/net.sf.jazzy/jazzy -->
 		<dependency>
 			<groupId>net.sf.jazzy</groupId>
 			<artifactId>jazzy</artifactId>
 			<version>0.5.2-rtext-1.4.1-2</version>
 		</dependency>
-		<!--		<dependency>-->
-		<!--			<groupId>io.qameta.allure</groupId>-->
-		<!--			<artifactId>allure-cucumber4-jvm</artifactId>-->
-		<!--			<version>2.23.0</version>-->
-		<!--		</dependency>-->
+<!--Hello-->
+<!--		<dependency>-->
+<!--			<groupId>io.qameta.allure</groupId>-->
+<!--			<artifactId>allure-cucumber4-jvm</artifactId>-->
+<!--			<version>2.23.0</version>-->
+<!--		</dependency>-->
 	</dependencies>
 	<build>
-		<sourceDirectory>src/main/java</sourceDirectory>
 		<plugins>
+		
+    <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven.compiler.version}</version>
+				<configuration>
+					<encoding>UTF-8</encoding>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
+			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>3.1.2</version>
+				<version>3.0.0-M5</version>
 				<configuration>
-					<suiteXmlFiles>
+				<!--	<suiteXmlFiles>
 						<suiteXmlFile>testng.xml</suiteXmlFile>
-					</suiteXmlFiles>
+					</suiteXmlFiles> -->
+					<testFailureIgnore>true</testFailureIgnore>
+                <shutdown>kill</shutdown> <!-- Use it if required-->
 					<argLine>
-						-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar" 
+						-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+						
 					</argLine>
 				</configuration>
 				<dependencies>

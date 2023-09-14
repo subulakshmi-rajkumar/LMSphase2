@@ -185,7 +185,8 @@ public class AssignmentSteps {
 	@Then("{int} textbox should be present in Assignment details popup window")
 	public void textbox_should_be_present_in_assignment_details_popup_window(Integer countTextBox) {
 		Boolean actualInt = assignmentPage.countTextBoxPopup(countTextBox);
-		Assert.assertEquals(actualInt, true);
+		assertTrue(actualInt, "Not landed in assignment page.");
+
 
 	}
 
@@ -199,14 +200,16 @@ public class AssignmentSteps {
 
 	@Then("Admin should see dropdown option for Program name on add assignment page")
 	public void admin_should_see_dropdown_option_for_program_name_on_add_assignment_page() {
-		Boolean actualtext = assignmentPage.dropDownProgramAssignment();
-		Assert.assertEquals(actualtext, true);
+		Boolean isInsideAssignmentPage = assignmentPage.dropDownProgramAssignment();
+		assertTrue(isInsideAssignmentPage, "Not landed in assignment page.");
+
 	}
 
 	@Then("Admin should see calendar icon for assignment due date on add assignment page")
 	public void admin_should_see_calendar_icon_for_assignment_due_date_on_add_assignment_page() {
-		Boolean actualtext = assignmentPage.calendarIconAssignment();
-		Assert.assertEquals(actualtext, true);
+		Boolean isIconVisible = assignmentPage.calendarIconAssignment();
+		assertTrue(isIconVisible, "Not landed in assignment page.");
+
 
 	}
 
@@ -428,7 +431,7 @@ public class AssignmentSteps {
 	@Then("Admin should see delete icon below the header is enabled for assignment page")
 	public void admin_should_see_delete_icon_below_the_header_is_enabled_for_assignment_page() {
 		Boolean deleteIconDisplayed = assignmentPage.deleteIcondisEnabled();
-		Assert.assertEquals(true, deleteIconDisplayed);
+		Assert.assertEquals(deleteIconDisplayed, "delete icon below the header is disabled for assignment page");
 		// LoggerLoad.info("delete icon below the header is enabled for assignment
 		// page");
 	}
@@ -526,7 +529,7 @@ public void admin_clicks_no_button_for_delete_alert_assignment_page() {
 	public void data_table_should_display_page_one_when_entries_available() {
 		Boolean currentPage = assignmentPage.defaultPageOneWithDataEntries();
 
-		Assert.assertEquals(currentPage, true);
+		Assert.assertEquals(currentPage, "Right arrow should be enabled in page one when entries are not more than five available");
 		// LoggerLoad.info("delete icon below the header is enabled");
 
 	}
@@ -534,7 +537,7 @@ public void admin_clicks_no_button_for_delete_alert_assignment_page() {
 	@Then("Right arrow should be enabled in page one when entries are more than five available")
 	public void right_arrow_should_be_enabled_in_page_one_when_entries_are_more_than_five_available() {
 		Boolean fivePlusEntries = assignmentPage.PageOneWithfiveAndMoreDataEntries();
-		Assert.assertEquals(fivePlusEntries, true);
+		Assert.assertEquals(fivePlusEntries, "Right arrow should be enabled in page one when entries are not more than five available");
 		// LoggerLoad.info("delete icon below the header is enabled");
 
 	}
@@ -542,7 +545,7 @@ public void admin_clicks_no_button_for_delete_alert_assignment_page() {
 	@Then("Left arrow should be disabled in page one when entries are more than five available")
 	public void left_arrow_should_be_disabled_in_page_one_when_entries_are_more_than_five_available() {
 		Boolean lArrowDisables = assignmentPage.PgOneLarrowDisabled();
-		Assert.assertEquals(lArrowDisables, true);
+		Assert.assertEquals(lArrowDisables, "Right arrow should be enabled in page one when entries are not more than five available");
 		// LoggerLoad.info("delete icon below the header is enabled");
 
 	}
@@ -620,7 +623,7 @@ public void admin_clicks_no_button_for_delete_alert_assignment_page() {
 	@Then("Admin should able to land on student page")
 	public void admin_should_able_to_land_on_student_page() {
 		Boolean stuPg = assignmentPage.assignmentTostudentPage();
-		Assert.assertEquals(stuPg, true);
+		Assert.assertEquals(stuPg, "Right arrow should be enabled in page one when entries are not more than five available");
 	}
 
 	@When("Admin clicks Program button in the navigation bar")
@@ -631,7 +634,7 @@ public void admin_clicks_no_button_for_delete_alert_assignment_page() {
 	@Then("Admin should able to land on program page")
 	public void admin_should_able_to_land_on_program_page() {
 		Boolean proPg = assignmentPage.assignmentToprogramPage();
-		Assert.assertEquals(proPg, true);
+		Assert.assertEquals(proPg, "Right arrow should be enabled in page one when entries are not more than five available");
 	}
 
 	@When("Admin clicks  Batch button in the navigation bar")
@@ -642,7 +645,7 @@ public void admin_clicks_no_button_for_delete_alert_assignment_page() {
 	@Then("Admin should able to land on batch page")
 	public void admin_should_able_to_land_on_batch_page() {
 		Boolean baPg = assignmentPage.assignmentTobatchPage();
-		Assert.assertEquals(baPg, true);
+		Assert.assertEquals(baPg, "Admin not able to land on batch page");
 	}
 
 	@When("Admin clicks User button in the navigation bar")
@@ -652,8 +655,8 @@ public void admin_clicks_no_button_for_delete_alert_assignment_page() {
 
 	@Then("Admin should able to land on user page")
 	public void admin_should_able_to_land_on_user_page() {
-		Boolean userPg = assignmentPage.assignmentTouserPage();
-		Assert.assertEquals(userPg, true);
+		Boolean isUserPg = assignmentPage.assignmentTouserPage();
+		Assert.assertEquals(isUserPg, "Admin not able to land on user page");
 	}
 
 	@When("Admin clicks class button in the navigation bar")
@@ -663,8 +666,8 @@ public void admin_clicks_no_button_for_delete_alert_assignment_page() {
 
 	@Then("Admin should able to land on class page")
 	public void admin_should_able_to_land_on_class_page() {
-		Boolean classPg = assignmentPage.assignmentToClassPage();
-		Assert.assertEquals(classPg, true);
+		Boolean isClassPg = assignmentPage.assignmentToClassPage();
+		Assert.assertEquals(isClassPg, "Admin not able to land on class page");
 
 	}
 
@@ -677,7 +680,7 @@ public void admin_clicks_no_button_for_delete_alert_assignment_page() {
 	public void admin_should_able_to_land_on_attendance_page() {
 
 		Boolean attendancePg = assignmentPage.assignmentToClassPage();
-		Assert.assertEquals(attendancePg, true);
+		Assert.assertEquals(attendancePg, "Admin not able to land on Attendance page");
 
 	}
 
@@ -690,7 +693,7 @@ public void admin_clicks_no_button_for_delete_alert_assignment_page() {
 	@Then("Admin should able to land on login page")
 	public void admin_should_able_to_land_on_login_page() {
 		Boolean loginPg = assignmentPage.assignmentTologinPage();
-		Assert.assertEquals(loginPg, true);
+		Assert.assertEquals(loginPg, "Admin not able to land on login page");
 
 	}
 

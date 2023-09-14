@@ -7,9 +7,6 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.BeforeClass;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
-
-
-
 //@RunWith(Cucumber.class)
 @io.cucumber.testng.CucumberOptions(
 		features = {"src/test/resources/features"},
@@ -21,7 +18,6 @@ import io.cucumber.testng.CucumberOptions;
 		},
 		monochrome=true
 		)
-
 public class TestRunner extends AbstractTestNGCucumberTests {
 	
 	@Override
@@ -34,7 +30,7 @@ public class TestRunner extends AbstractTestNGCucumberTests {
 //	public final static ThreadLocal<String> Browser = new ThreadLocal<>();
 //	
 //	@BeforeTest
-//	@Parameters({"browser"}) 
+//	@Parameters({"browser"})
 //	
 //	public void browserType(String browser) throws Throwable
 //	{
